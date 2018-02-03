@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"  >
+  <channel>
+    <title>Хабрахабр / Интересные публикации</title>
+    <link>https://habrahabr.ru/</link>
+    <description><![CDATA[Интересные публикации на Хабрахабре]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habrahabr.ru</managingEditor>
+    <generator>habrahabr.ru</generator>
+    <pubDate>Sat, 03 Feb 2018 11:31:34 GMT</pubDate>
+    <lastBuildDate></lastBuildDate>
+      <image>
+        <link>https://habrahabr.ru/</link>
+        <url>https://habrahabr.ru/images/logo.png</url>
+        <title>Хабрахабр</title>
+      </image>
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Перевод] Шон Пирс: настоящий лидер]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348200/</guid>
+      <link>https://habrahabr.ru/post/348200/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348200</link>
+      <description><![CDATA[Перевод статьи "<a href="https://gitenterprise.me/2018/01/30/shawn-pearce-a-true-leader/">Шон Пирс: настоящий лидер</a>" — о человеке, который является основателем многих проектов, в том числе Git и Gerrit Code Review.<br> <a href="https://habrahabr.ru/post/348200/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348200#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 23:38:55 GMT</pubDate>
+      <dc:creator>IsaNesquik</dc:creator>
+      <category><![CDATA[Системы управления версиями]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Git]]></category>
+      <category>rip</category><category>git</category>
+    </item>
+
+
+
+      <item>
+      <title><![CDATA[Понимание lvalue и rvalue в C и С++]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348198/</guid>
+      <link>https://habrahabr.ru/post/348198/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348198</link>
+      <description><![CDATA[Привет, Хабр! Представляю вашему вниманию перевод статьи <b>Eli Bendersky</b>, <i><a href="https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c">Understanding of lvalues and rvalues in C and C++</a></i>. <br>
+<br>
+От переводчика: <i>предлагаю Вашему вниманию перевод интересной статьи об lvalue и rvalue в языках C/C++. Тема не нова, но знать об этих понятиях никогда не поздно. Статья рассчитана на новичков, либо на программистов переходящих с C (или других языков) на C++. Поэтому будьте готовы к подробному разжёвыванию. Если вам интересно, добро пожаловать под кат</i> <br> <a href="https://habrahabr.ru/post/348198/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348198#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 22:16:58 GMT</pubDate>
+      <dc:creator>rhaport</dc:creator>
+      <category><![CDATA[Программирование]]></category><category><![CDATA[C++]]></category><category><![CDATA[C]]></category>
+      <category><![CDATA[перевод]]></category><category><![CDATA[rvalue]]></category><category><![CDATA[lvalue]]></category><category><![CDATA[C++]]></category><category><![CDATA[C]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Перевод] Делаем разноцветные иконки с помощью SVG-символов и CSS-переменных]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348194/</guid>
+      <link>https://habrahabr.ru/post/348194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348194</link>
+      <description><![CDATA[<img src="https://habrastorage.org/webt/ek/pz/pz/ekpzpzomsu9a2ztcnbuu8v0gqhq.png" alt="Icons"><br>
+<br>
+Давно прошли те дни, когда для иконок в вебе использовались картинки и CSS-спрайты. С развитием веб-шрифтов номером 1 для отображения иконок на сайтах стали иконочные шрифты.<br>
+<br>
+Шрифты — векторные, так что вам не нужно беспокоиться о разрешении экрана. Для них можно использовать те же CSS-свойства, что и для текста. В результате вы имеете полный контроль над их размером, цветом и стилем. Вы можете добавлять к ним эффекты, трансформировать или декорировать их. Например, повернуть (<code>rotate</code>), подчеркнуть (<code>underline</code>) или добавить тень (<code>text-shadow</code>).<br>
+<br>
+<b>Иконочные шрифты не идеальны</b>, поэтому все большее число людей предпочитает использовать встроенные SVG-изображения. На CSS Tricks есть статья, где описаны моменты, в которых <a href="https://css-tricks.com/icon-fonts-vs-svg">иконочные шрифты уступают SVG-элементам</a>: резкость, позиционирование, сбои кросс-доменной загрузки, особенности браузеров и блокировщики рекламы. Сейчас вы можете обойти большинство этих проблем, что, в целом, делает использование иконочных шрифтов безопасным.<br>
+<br>
+Да, еще одна вещь, которая абсолютно невозможна при использовании иконочных шрифтов: <b>поддержка многоцветности</b>. Только SVG может это сделать.<br>
+<br>
+<b>TL;DR</b>: <i>этот пост позволяет вникнуть в то, как и почему. Если вы хотите понять весь процесс, читайте дальше. В противном случае вы можете посмотреть окончательный код на <a href="https://codepen.io/sarahdayan/pen/GOzaEQ">CodePen</a>.</i><br> <a href="https://habrahabr.ru/post/348194/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348194#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 20:03:02 GMT</pubDate>
+      <dc:creator>TanyaS</dc:creator>
+      <category><![CDATA[Разработка веб-сайтов]]></category><category><![CDATA[Работа с векторной графикой]]></category><category><![CDATA[CSS]]></category>
+      <category>перевод</category><category>svg</category><category>css-переменные</category>
+    </item>
+
+
+
+      <item>
+      <title><![CDATA[Отслеживаем действия пользователя с помощью CSS]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348196/</guid>
+      <link>https://habrahabr.ru/post/348196/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348196</link>
+      <description><![CDATA[<p>В этом посте вы сможете узнать, почему даже с выключенным JavaScript и без плагинов, вы все равно можете отсылать поведенческие данные на сторонний сервер. </p><br>
+<p>Также здесь мы рассмотрим метод, как получить поведенческую информацию от пользователей используя только HTML и CSS.</p><br>
+<p>Возможно, после прочтения поста, вам покажется что я "изобрел колесо". Так и есть, методы описанные в этом посте не новы, и используют спецификации которые поддерживают практически все браузеры. </p><br>
+<p>Так или иначе, эта информация поможет вам понять один нестандартный метод отслеживания поведения пользователей, который на данный момент нельзя "отключить" (в настройках) или заблокировать (плагинами вроде AdBlock или Ghostery).</p> <a href="https://habrahabr.ru/post/348196/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348196#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 21:36:07 GMT</pubDate>
+      <dc:creator>hcbogdan</dc:creator>
+      <category><![CDATA[Программирование]]></category><category><![CDATA[PHP]]></category><category><![CDATA[CSS]]></category>
+      <category><![CDATA[lifehack]]></category><category><![CDATA[css]]></category><category><![CDATA[user experience]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Из песочницы] Какие привычки делают меня лучше как разработчика ПО?]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348158/</guid>
+      <link>https://habrahabr.ru/post/348158/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348158</link>
+      <description><![CDATA[Привет, Хабр! Представляю вашему вниманию перевод статьи <a href="https://hackernoon.com/what-habits-made-me-a-better-software-engineer-47e7d54b8fa">«What habits made me a better Software Engineer?»</a> от Sonny Recio.<br/>
+<br/>
+Наши привычки — это ежедневные шаблоны поведения в жизни. Они могут быть как плохими, так и хорошими. Привычки могут быть жизненно необходимыми, например, потребность в еде 3 раза в день. Есть и такие привычки, которые помогают быть здоровым — занятие в тренажерном зале 3-4 раза в неделю. Но есть также привычки, которые портят тело, такие как курение и ежедневное распитие алкогольных напитков.<br/>
+<br/>
+Наконец, есть привычки, которые сделают вас успешнее в любой профессии, в которой вы работаете. С помощью привычек человек становится экспертом, гением и получает навыки в своей профессии. Это не происходит за одну ночь, но это возможно. Самые продуктивные и успешные люди скажут, что привычки — это то, что сделало их успешными. И я не могу с этим не согласиться.<br/>
+<br/>
+Мне потребовалось какое-то время, прежде чем я начал развивать привычки, которые сделали меня лучше как разработчика ПО. Благодаря работе с разными клиентами в различных отраслях, я начал развивать навыки, от которых мне сейчас трудно отказаться, поскольку они позволяют мне быть лучше с каждым днем.<br/>
+<br/>
+Если вас заинтересовали мои слова, вот некоторые из привычек, которые я сформировал, чтобы стать успешным. Вы их можете также использовать:<br/>
+<br/>
+ <a href="https://habrahabr.ru/post/348158/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348158#habracut">Читать дальше &rarr;</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 11:58:21 GMT</pubDate>
+      <dc:creator>IsaNesquik</dc:creator>
+      <category><![CDATA[Программирование]]></category>
+      <category>разработка по</category><category>привычки</category><category>хороший код</category><category>хорошие практики</category>
+    </item>
+
+
+
+
+
+      <item>
+      <title><![CDATA[DDD на практике]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/334126/</guid>
+      <link>https://habrahabr.ru/post/334126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=334126</link>
+      <description><![CDATA[<img align="left" src="https://habrastorage.org/webt/mc/xv/xx/mcxvxx5zbueqfamfftgldnyupx4.png">Эванс написал хорошую книжку с хорошими идеями. Но этим идеям не хватает методологической основы. Опытным разработчикам и архитекторам на интуитивном уровне понятно, что надо быть как можно ближе к предметной области заказчика, что с заказчиком надо разговаривать. Но не понятно как оценить проект на соответствие Ubiquitous Language и реального языка заказчика? Как понять, что домен разделен на Bounded Context правильно? Как вообще опредилить используется DDD в проекте или нет?<br>
+<br>
+Последний пункт особенно актуален. На одном из своих выступлений Грег Янг попросил поднять руки тех, кто практиукует DDD. А потом попросил опустить тех, кто создает классы с набором публичных геттеров и сеттеров, располагает логику в «сервисах» и «хелперах» и называет это DDD. По залу прошел смешок:)<br>
+<br>
+Как же правильно структурировать бизнес-логику в DDD-стиле? Где хранить «поведение»: в сервисах, сущностях, extension-методах или везде по чуть-чуть? В статье я расскажу о том, как проектирую предметную область и какими правилами пользуюсь.<br> <a href="https://habrahabr.ru/post/334126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=334126#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 19:15:53 GMT</pubDate>
+      <dc:creator>marshinov</dc:creator>
+      <category><![CDATA[Разработка веб-сайтов]]></category><category><![CDATA[Проектирование и рефакторинг]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[.NET]]></category>
+      <category><![CDATA[orm]]></category><category><![CDATA[ddd]]></category><category><![CDATA[cqrs]]></category><category><![CDATA[domain model]]></category><category><![CDATA[rich domain model]]></category><category><![CDATA[functional thinking]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Программный синтез звука на ранних персональных компьютерах. Часть 2]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348192/</guid>
+      <link>https://habrahabr.ru/post/348192/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348192</link>
+      <description><![CDATA[Это статья о первых программных синтезаторах, которые были когда-то созданы на самых обычных персональных компьютерах. Я даю несколько практических примеров по реализации простых методов звукового синтеза в историческом контексте.<br>
+<br>
+<a href="https://habrahabr.ru/post/348036/">Перейти к первой части</a><br>
+<br>
+<div style="text-align:center;"><img src="https://habrastorage.org/webt/ud/yn/-b/udyn-bnelpjksrhdcco_tmugn4a.png" width="75%"></div> <a href="https://habrahabr.ru/post/348192/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348192#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 18:46:53 GMT</pubDate>
+      <dc:creator>true-grue</dc:creator>
+      <category><![CDATA[Читальный зал]]></category><category><![CDATA[Работа со звуком]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Алгоритмы]]></category><category><![CDATA[Python]]></category>
+      <category><![CDATA[цифровая обработка сигналов]]></category><category><![CDATA[синтезатор]]></category><category><![CDATA[синтез звука]]></category><category><![CDATA[история it]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Трансдьюсеры в JS – так ли уж необходимы?]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348170/</guid>
+      <link>https://habrahabr.ru/post/348170/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348170</link>
+      <description><![CDATA[Функциональный подход потихоньку-полегоньку проник почти во все современные языки программирования. Тогда как одни элементы оттуда, вроде монад («всего лишь моноид в категории эндофункторов, в чем проблема?») – очень спорные для мэйнстрима, другие – вроде преобразований map, reduce, filter – стали стандартом де-факто.<br>
+<br>
+<div style="text-align:center;"><img src="https://habrastorage.org/getpro/habr/post_images/8bd/afb/f8d/8bdafbf8d74343b2b2f514ea1c3d5f1f.jpg" alt="image"></div><br>
+При всех своих плюсах святая троица map/filter/reduce – в JS не очень экономно работает с памятью. Грандиозный архитектурный костыль – <a href="https://habrahabr.ru/company/infopulse/blog/347968/">трансдьюсеры</a> – успешно запортирован с Clojure на JS, и поражает неофитов своей непонятностью, при этом вроде как решает проблему с излишним выделением памяти.<br> <a href="https://habrahabr.ru/post/348170/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348170#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 14:04:52 GMT</pubDate>
+      <dc:creator>JSmitty</dc:creator>
+      <category><![CDATA[JavaScript]]></category>
+      <category><![CDATA[js]]></category><category><![CDATA[функциональное программирование]]></category><category><![CDATA[трансдьюсеры]]></category><category><![CDATA[никто не читает теги]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Реализация простой пиксельной игры в блокчейне Ethereum]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348174/</guid>
+      <link>https://habrahabr.ru/post/348174/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348174</link>
+      <description><![CDATA[Всем привет! Вдохновившись r/place и желая реализовать наконец-то свой первый смарт-контракт на блокчейне, мы решили сделать всем доступное и веселое приложение в сети Ethereum, которое позволяет рисовать на холсте размером в 1000 x 1000 px, сохраняя каждый выбранный и раскрашенный пользователем пиксель в блокчейн. Вы можете рисовать также в реальном времени со своими друзьями и наблюдать, как в реальном времени меняется цвет выбранного пикселя по мере того, как в сети подтверждаются транзакции смарт-контракта. <br>
+<br>
+Смарт-контракт не требует оплаты за изменения цвета пикселей, но нужно будет заплатить небольшую комиссию майнерам за подтверждение транзакции. <br>
+<br>
+В данной статье я бы хотел рассказать, как у нас получилась текущая первая версия приложения и с какими техническими сложностями нам пришлось столкнуться.<br> <a href="https://habrahabr.ru/post/348174/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348174#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 14:15:54 GMT</pubDate>
+      <dc:creator>war_hol</dc:creator>
+      <category><![CDATA[Разработка игр]]></category><category><![CDATA[Криптография]]></category><category><![CDATA[Децентрализованные сети]]></category><category><![CDATA[Solidity]]></category>
+      <category><![CDATA[Ethereum]]></category><category><![CDATA[блокчейн]]></category><category><![CDATA[распределенное хранилище данных]]></category><category><![CDATA[игра своими руками]]></category><category><![CDATA[scala]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Перевод] Четыре способа обмануть нейросеть глубокого обучения]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348140/</guid>
+      <link>https://habrahabr.ru/post/348140/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348140</link>
+      <description><![CDATA[<div style="text-align:center;"><img src="https://habrastorage.org/webt/1k/_v/lw/1k_vlwl0whgakpakr4vkma3lj7e.jpeg"></div><br>
+<p>Нейросети используются уже довольно широко. Чат-боты, распознавание изображений, преобразование речи в текст и автоматические переводы с одного языка на другой — вот лишь некоторые сферы применения глубокого обучения, которое активно вытесняет другие подходы. И причина в основном в более широких возможностях обобщения при обработке больших объёмов данных. </p> <a href="https://habrahabr.ru/post/348140/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348140#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 18:02:35 GMT</pubDate>
+      <dc:creator>AloneCoder</dc:creator>
+      <category><![CDATA[Обработка изображений]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Математика]]></category><category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[Блог компании Mail.Ru Group]]></category>
+      <category>нейронные сети</category><category>обработка изображений</category><category>никто не читает теги</category>
+    </item>
+
+
+
+      <item>
+      <title><![CDATA[Хочу как у YouTube]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/334994/</guid>
+      <link>https://habrahabr.ru/post/334994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=334994</link>
+      <description><![CDATA[<p>Вы когда-нибудь задумывались как устроен ID видео на YouTube?<br>
+Возможно, вы уже знаете/нашли ответ, но, как показали обсуждения на Stack Overflow, многие понимают эту технологию неправильно. Если вам интересно изучить что-то новое, добро пожаловать под кат.</p><br>
+<div style="text-align:center;"><img src="https://habrastorage.org/webt/59/cc/a7/59cca737b888c306300556.png" alt="Хочу как у YouTube"></div> <a href="https://habrahabr.ru/post/334994/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=334994#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 14:22:27 GMT</pubDate>
+      <dc:creator>ghost404</dc:creator>
+      <category><![CDATA[ООП]]></category><category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[Алгоритмы]]></category><category><![CDATA[PHP]]></category>
+      <category><![CDATA[php]]></category><category><![CDATA[ddd]]></category><category><![CDATA[youtube]]></category><category><![CDATA[uuid]]></category><category><![CDATA[guid]]></category><category><![CDATA[uid]]></category><category><![CDATA[комбинаторика]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Из песочницы] Можно ли использовать CQRS паттерн в GO?]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348126/</guid>
+      <link>https://habrahabr.ru/post/348126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348126</link>
+      <description><![CDATA[Паттерн (CQRS — Command and Query Responsibility Segregation) разделяющей в своей основе команды по чтению данных от команд по их модификации или добавлению. Это позволяет достичь максимальную производительность, масштабируемость и безопасность, а также позволяет увеличить гибкость системы к модификациям с течением времени и снизить количество ошибок при усложнении логики системы, причиной которых обычно является обработка данных на доменном уровне.<br> <a href="https://habrahabr.ru/post/348126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348126#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 07:46:51 GMT</pubDate>
+      <dc:creator>BOOTLOADER</dc:creator>
+      <category><![CDATA[Go]]></category>
+      <category>golang cqrs</category>
+    </item>
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Перевод] SQL ключи во всех подробностях]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348172/</guid>
+      <link>https://habrahabr.ru/post/348172/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348172</link>
+      <description><![CDATA[В Интернете полно догматических заповедей о том, как нужно выбирать и использовать ключи в реляционных базах данных. Иногда споры даже переходят в холивары: использовать естественные или искусственные ключи? Автоинкрементные целые или UUID?<br>
+<br>
+Прочитав шестьдесят четыре статьи, пролистав разделы пяти книг и задав кучу вопросов в IRC и StackOverflow, я, как мне кажется, собрал куски паззла воедино и теперь смогу примирить противников. Многие споры относительно ключей возникают, на самом деле, из-за неправильного понимания чужой точки зрения.<br>
+<br>
+<h3>Содержание</h3><br>
+<ul>
+<li><a href="#keys">Что же такое «ключи»?</a></li>
+<li><a href="#happening">Любопытный случай первичных ключей</a></li>
+<li><a href="#choice">Выбор естественных ключей</a></li>
+<li><a href="#artificial">Искусственные ключи</a></li>
+<li><a href="#surrogate">Суррогатные ключи</a></li>
+<li><a href="#auto-increment">Автоинкрементные BIGINT</a></li>
+<li><a href="#uuid">UUID</a></li>
+<li><a href="#sum">Итоги и рекомендации</a></li>
+</ul><br>
+Давайте разделим проблему на части, а в конце соберём её снова. Для начала зададим вопрос – что же такое «ключ»?<br> <a href="https://habrahabr.ru/post/348172/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348172#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 14:40:30 GMT</pubDate>
+      <dc:creator>olegbunin</dc:creator>
+      <category><![CDATA[Администрирование баз данных]]></category><category><![CDATA[SQL]]></category><category><![CDATA[PostgreSQL]]></category><category><![CDATA[MySQL]]></category><category><![CDATA[Блог компании Конференции Олега Бунина (Онтико)]]></category>
+      <category>sql</category><category>индексы</category>
+    </item>
+
+
+
+      <item>
+      <title><![CDATA[Как мы запустили offline-версию сайта RG.RU]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348150/</guid>
+      <link>https://habrahabr.ru/post/348150/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348150</link>
+      <description><![CDATA[Как часто, запрашивая страницу, мы видим сообщение «Нет подключения к интернету». Однако, уже давно существует возможность отлавливать события в отсутствие интернета и контролировать содержимое, которое видит пользователь. Алексей Чернышев и Максим Чагин запустили offline-версию сайта Российской Газеты – официального издания Правительства России с 1 млн посетителей в сутки – и поделились своим опытом на РИТ++ 2017. Под катом расшифровка их доклада.<br>
+<br>
+<img src="https://habrastorage.org/getpro/habr/post_images/16f/548/874/16f548874ce790bf6dfb8ea473bc2395.png"><br> <a href="https://habrahabr.ru/post/348150/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348150#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 11:35:11 GMT</pubDate>
+      <dc:creator>olegbunin</dc:creator>
+      <category><![CDATA[Разработка веб-сайтов]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Клиентская оптимизация]]></category><category><![CDATA[JavaScript]]></category><category><![CDATA[Блог компании Конференции Олега Бунина (Онтико)]]></category>
+      <category><![CDATA[service workers]]></category><category><![CDATA[javascript]]></category><category><![CDATA[offline]]></category><category><![CDATA[spa]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Great developer, true engineer and real leader — RIP Shawn O. Pearce]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348164/</guid>
+      <link>https://habrahabr.ru/post/348164/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348164</link>
+      <description><![CDATA[<p><img src="https://habrastorage.org/getpro/habr/post_images/e6a/c86/e46/e6ac86e4664bdabee31ecd1d9e6c64d9.jpg" alt="image"></p><br>
+<p>29 января 2018, скончался Шон Пирс, известный программист, автор, коммиттер и основатель многих проектов, в том числе Git, Jgit, libgit и Gerrit Code Review.</p><br>
+<p>Умер выдающийся разработчик, настоящий инженер и отличный руководитель, оставив замечательных пацанов, жену и… всё опенсорс сообщество.</p><br>
+<p>Почти год назад, когда у него был диагностирован рак легких, у него была только одна просьба, сделайте все возможное, присмотрите за мальчиками и Сарой, чтобы помочь им в переходный период.</p> <a href="https://habrahabr.ru/post/348164/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348164#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 13:17:25 GMT</pubDate>
+      <dc:creator>sebres</dc:creator>
+      <category><![CDATA[Системы управления версиями]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Git]]></category><category><![CDATA[Eclipse]]></category><category><![CDATA[*nix]]></category>
+      <category><![CDATA[RIP]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[История взлома одного WordPress плагина — или о том, как вы допускаете уязвимости в своих проектах]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348142/</guid>
+      <link>https://habrahabr.ru/post/348142/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348142</link>
+      <description><![CDATA[Давным давно, когда я был молод и писал сайты на PHP, я написал SEO плагин для маскировки внешних ссылок для Wordpress. Поскольку с воображением у меня плохо, то назвал его WP-NoExternalLinks. За всю историю у него было 360.000 установок и, кажется, до 50.000 активных установок.<br>
+<br>
+Дальше я расскажу, каким именно образом он попал в недобросовестные руки и был злонамеренно использован — но для этого придётся немного погрузиться в его историю и обстановку разработки. Сразу предупрежу, что эта история абсолютно реальная.<br>
+<img src="https://habrastorage.org/webt/ll/2e/qv/ll2eqvounxfb1if1k20qmenuwqy.jpeg"><br> <a href="https://habrahabr.ru/post/348142/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348142#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 10:01:23 GMT</pubDate>
+      <dc:creator>jehy</dc:creator>
+      <category><![CDATA[Программирование]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[WordPress]]></category><category><![CDATA[PHP]]></category><category><![CDATA[Open source]]></category>
+      <category><![CDATA[wordpress]]></category><category><![CDATA[plugins]]></category><category><![CDATA[информационная безопасность]]></category><category><![CDATA[взлом]]></category><category><![CDATA[open source]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Почему большинство людей не используют двухфакторную аутентификацию?]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348124/</guid>
+      <link>https://habrahabr.ru/post/348124/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348124</link>
+      <description><![CDATA[<h1>Менее 10% аккаунтов используют двухфакторную аутентификацию, около 12% — менеджеры паролей</h1><br>
+<img src="https://habrastorage.org/webt/mi/sg/f0/misgf0e3d_0awxqp0l1r0uzmlcw.jpeg"><br>
+<br>
+Прошло почти семь лет с того момента, как Google представила двухфакторную аутентификацию (2FA), но до сих пор практически никто не использует её.<br>
+<br>
+На январской конференции по информационной безопасности Usenix's Enigma 2018 с презентацией выступил инженер-программист Google Гжегож Милка (Grzegorz Milka). Он опубликовал печальную статистику того, как обычные пользователи относятся к своей безопасности: менее чем на 10% активных аккаунтов Google используется 2FA и всего около 12% американцев используют менеджеры паролей (статистика Pew Research Center). Недавно эта тема <a href="https://geektimes.ru/post/297395/">обсуждалась</a> на Geektimes.<br>
+<br>
+Оставим за скобками то, что Google при активации 2FA требует обязательного указания номера телефона — это не устраивает тех, кто не готов делиться персональными данными с корпорацией. Вполне разумная позиция. Но большинство пользователей предпочитают игнорировать 2FA по другим причинам. Почему?<br> <a href="https://habrahabr.ru/post/348124/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348124#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 07:28:21 GMT</pubDate>
+      <dc:creator>GlobalSign</dc:creator>
+      <category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Интерфейсы]]></category><category><![CDATA[Usability]]></category><category><![CDATA[Блог компании GlobalSign]]></category>
+      <category><![CDATA[Google]]></category><category><![CDATA[двухфакторная аутентификация]]></category><category><![CDATA[2FA]]></category><category><![CDATA[перехват SMS]]></category><category><![CDATA[SS7]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+
+
+    <item>
+      <title><![CDATA[[Перевод] Изометрическая сортировка по глубине для подвижных платформ]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348138/</guid>
+      <link>https://habrahabr.ru/post/348138/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348138</link>
+      <description><![CDATA[<div style="text-align:center;"><img src="https://habrastorage.org/getpro/habr/post_images/3de/eb9/b53/3deeb9b5317b1a932afeeb12a2222200.png"></div><br>
+<i>Что мы будем создавать</i><br>
+<br>
+Простыми словами сортировку по глубине можно объяснить как способ определения близких и отдалённых от камеры элементов. Таким образом, мы определяем порядок, в котором они должны быть выстроены, чтобы соответствовать правильной глубине в сцене.<br>
+<br>
+В этом туториале мы подробнее рассмотрим сортировку по глубине для изометрических уровней, потому что добавим ещё и подвижные платформы. Этот туториал — не введение в теорию изометрии и не посвящён коду. В нём мы будем разбираться в логике и теории, а не анализировать код. В качестве инструмента используется Unity, поэтому сортировка по глубине сводится к изменению <code>sortingOrder</code> спрайтов. В других фреймворках она может являться изменением порядка по оси Z или последовательности отрисовки.<br>
+<br>
+Для изучения основ теории изометрии прочитайте <a href="https://habrahabr.ru/post/332922/" rel="external">этот туториал</a>. Код и структура кода соответствуют моему <a href="https://gamedevelopment.tutsplus.com/tutorials/unity-2d-tile-based-isometric-and-hexagonal-sokoban-game--cms-29715">предыдущему изометрическому туториалу</a>. Изучите его, если этот туториал покажется вам сложным, потому что в нём я сосредоточусь только на логике.<br> <a href="https://habrahabr.ru/post/348138/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348138#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 10:07:34 GMT</pubDate>
+      <dc:creator>PatientZero</dc:creator>
+      <category><![CDATA[Разработка игр]]></category><category><![CDATA[Алгоритмы]]></category><category><![CDATA[Unity3D]]></category>
+      <category>изометрия</category><category>сортировка по глубине</category><category>изометрические игры</category>
+    </item>
+
+
+
+      <item>
+      <title><![CDATA[Chromium: другие ошибки]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348134/</guid>
+      <link>https://habrahabr.ru/post/348134/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348134</link>
+      <description><![CDATA[﻿<img src="https://habrastorage.org/getpro/habr/post_images/053/5f4/994/0535f4994594b698c8f8fccc796c22a5.png" alt="Доставка ошибок" align="left">Мы завершаем цикл статей, посвященных рекомендациям по написанию качественного кода на примере ошибок, найденных в проекте Chromium. После написания 6 статей, у нас всё ещё остаётся много нерассмотренных ошибок. Эти ошибки разнородны и про них сложно составить материал на определённую тему. Поэтому в этой седьмой статье будут просто выбраны и рассмотрены наиболее интересные дефекты.<br>
+<br>
+Как я писал в <a href="https://habrahabr.ru/company/pvs-studio/blog/347536/">вводной статье</a>, просматривая отчёт, выданный анализатором PVS-Studio, я заметил около 250 ошибок в проекте Chromium и использованных в нём библиотеках. Отчёт я смотрел достаточно бегло, поэтому, на самом деле, ошибок можно найти намного больше.<br>
+<br>
+После вводной статьи я написал еще 6, где рассматривал различные паттерны ошибок. Писал я эти статьи, писал, и всё равно, у меня остаётся около 70 примеров ошибок. Сделать на основании оставшихся багов статьи на разные темы я затрудняюсь. Возможно, я устал. Впрочем, есть и другая причина — меня ждёт <a href="http://cppfiles.com/xnu.txt">отчёт</a> о проверке <a href="https://ru.wikipedia.org/wiki/XNU">XNU</a> и мне не терпится им позаниматься.<br> <a href="https://habrahabr.ru/post/348134/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348134#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 08:57:18 GMT</pubDate>
+      <dc:creator>Andrey2008</dc:creator>
+      <category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Open source]]></category><category><![CDATA[Google Chrome]]></category><category><![CDATA[C++]]></category><category><![CDATA[Блог компании PVS-Studio]]></category>
+      <category><![CDATA[C++]]></category><category><![CDATA[pvs-studio]]></category><category><![CDATA[pvs-studio standalone]]></category><category><![CDATA[Си++]]></category><category><![CDATA[статический анализ кода]]></category><category><![CDATA[chromium]]></category><category><![CDATA[open source]]></category><category><![CDATA[ошибки в программе]]></category><category><![CDATA[ошибки в коде]]></category><category><![CDATA[bugs]]></category><category><![CDATA[errors]]></category>
+    </item>
+
+
+
+
+
+
+
+      <item>
+      <title><![CDATA[Расширяем функционал Ansible с помощью модулей]]></title>
+      <guid isPermaLink="true">https://habrahabr.ru/post/348118/</guid>
+      <link>https://habrahabr.ru/post/348118/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348118</link>
+      <description><![CDATA[<p><img align="left" src="https://habrastorage.org/webt/lu/rl/ma/lurlmap5e-ovvy-vfz9rzmpi0hi.jpeg"> Под капотом сервиса <a href="https://d2c.io/">d2c.io</a> мы активно используем Ansible – от создания виртуальных машин в облаках провайдеров и установки необходимого программного обеспечения, до управления Docker-контейнерами с приложениями клиентов.</p><br>
+<p><a href="https://habrahabr.ru/company/d2cio/blog/344046/">В статье о раширении функциональности Ansible</a> мы частично рассмотрели, чем отличаются плагины от модулей. Если вкратце, основное различие в том, что первые выполняются на локальной машине, где установлен Ansible, а вторые — на целевых.</p><br>
+<p>Основная задача плагинов – влиять на ход выполнения плейбука, добавлять новые возможности загрузки и обработки данных. Задача же модулей – расширять перечень систем и сервисов, которыми Ansible может управлять. Например, создать сервер на площадке Vultr – модуль <code>vultr</code>, создать пользователя в самодельной системе авторизации для офисной WiFi сети – модуль <code>mywifiauth_user</code>.</p> <a href="https://habrahabr.ru/post/348118/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=348118#habracut">Читать дальше →</a>]]></description>
+
+      <pubDate>Fri, 02 Feb 2018 06:39:12 GMT</pubDate>
+      <dc:creator>Berlic</dc:creator>
+      <category><![CDATA[Серверное администрирование]]></category><category><![CDATA[IT-инфраструктура]]></category><category><![CDATA[DevOps]]></category><category><![CDATA[Блог компании D2C.io]]></category>
+      <category><![CDATA[ansible]]></category><category><![CDATA[devops]]></category><category><![CDATA[infrastructure as code]]></category>
+    </item>
+
+
+
+
+
+
+
+
+
+
+
+  </channel>
+</rss>
