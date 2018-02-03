@@ -1,6 +1,8 @@
 package com.eugene.shvabr.domain.model;
 
-import java.util.ArrayList;
+import android.support.annotation.NonNull;
+
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -8,5 +10,13 @@ import java.util.List;
  */
 
 public class RssFeed {
-    private final List<RssItem> items = new ArrayList<>();
+    private final List<RssItem> items;
+
+    public RssFeed(@NonNull List<RssItem> items) {
+        this.items = Collections.unmodifiableList(items);
+    }
+
+    public List<RssItem> getItems() {
+        return items;
+    }
 }
