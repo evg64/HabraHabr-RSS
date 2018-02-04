@@ -8,4 +8,6 @@
     <string name="published_format">Опубликовал: %s</string>
     <string name="failed_to_display_rss_feed">Не удалось отобразить rss-фид</string>
     <string name="categories_format">Категории: %s</string>
+    <string name="refresh">Обновить</string>
+    <string name="reload">Перезагрузить</string>
 </resources>

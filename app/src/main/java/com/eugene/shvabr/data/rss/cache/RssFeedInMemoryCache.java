@@ -14,12 +14,17 @@ public class RssFeedInMemoryCache implements RssFeedCache {
 
     @Nullable
     @Override
-    public RssFeed get() {
+    public synchronized RssFeed get() {
         return cachedValue;
     }
 
     @Override
-    public void put(@NonNull RssFeed feed) {
+    public synchronized void put(@NonNull RssFeed feed) {
         cachedValue = feed;
+    }
+
+    @Override
+    public synchronized void reset() {
+        cachedValue = null;
     }
 }

@@ -5,18 +5,18 @@ import android.graphics.Bitmap;
 import com.eugene.shvabr.data.common.network.exception.HttpException;
 import com.eugene.shvabr.data.common.network.exception.ParseException;
 import com.eugene.shvabr.data.image.cache.ImageCache;
-import com.eugene.shvabr.data.image.cache.ImageInMemoryCache;
 
 /**
  * Created by Eugene on 04.02.2018.
  */
 
 public class ImageCachingDataSource implements ImageDataSource {
-    private ImageCache cache = new ImageInMemoryCache();
+    private ImageCache cache;
     private final ImageDataSource wrapped;
 
-    public ImageCachingDataSource(ImageDataSource wrapped) {
+    public ImageCachingDataSource(ImageDataSource wrapped, ImageCache cache) {
         this.wrapped = wrapped;
+        this.cache = cache;
     }
 
     @Override

@@ -11,8 +11,10 @@ import com.eugene.shvabr.data.image.repository.ImageRepositoryImpl;
 import com.eugene.shvabr.data.rss.repository.RssRepositoryImpl;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
+import com.eugene.shvabr.domain.repository.ImageRepository;
 import com.eugene.shvabr.domain.repository.RssRepository;
 import com.eugene.shvabr.domain.use_case.GetFeedUseCase;
+import com.eugene.shvabr.domain.use_case.RefreshUseCase;
 import com.eugene.shvabr.ui.common.mvp.BasePresenter;
 import com.eugene.shvabr.ui.rss_feed.RssMvp;
 import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
@@ -24,7 +26,8 @@ import java.util.List;
  */
 public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.Presenter {
 
-    private final RssRepository repository = RssRepositoryImpl.getInstance();
+    private final RssRepository rssRepository = RssRepositoryImpl.getInstance();
+    private final ImageRepository imageRepository = ImageRepositoryImpl.getInstance();
     private GetFeedUseCase getFeedUseCase;
 
     @Override
@@ -52,36 +55,62 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
             @Override
             public void onSuccess(final RssFeed feed) {
                 getFeedUseCase = null;
-                if (view != null) {
-                    if (feed == null || feed.getItems() == null) {
-                        view.hideLoading();
-                        view.showError(R.string.failed_to_load_rss_empty_beans);
-                    } else {
-                        new ConvertAndDisplayTask(feed).execute();
-                    }
-                }
+                onRssFeedReceived(feed);
             }
 
             @Override
             public void onError(Throwable description) {
                 getFeedUseCase = null;
-                if (view != null) {
-                    view.hideLoading();
-                    final int errMsgResId;
-                    if (description instanceof HttpException) {
-                        errMsgResId = R.string.failed_to_load_rss_network_error;
-                    } else if (description instanceof ParseException) {
-                        errMsgResId = R.string.failed_to_load_rss_parsing_error;
-                    } else {
-                        errMsgResId = R.string.failed_to_load_rss_unknown_error;
-                    }
-                    view.showError(errMsgResId);
-                }
+                onFailedToReceiveRssFeed(description);
             }
         };
         view.showLoading();
-        getFeedUseCase = new GetFeedUseCase(repository);
+        getFeedUseCase = new GetFeedUseCase(rssRepository);
         getFeedUseCase.execute(new ConcurrentUtils.UIThreadCallback<>(callback));
+    }
+
+    private void onRssFeedReceived(RssFeed feed) {
+        if (view != null) {
+            if (feed == null || feed.getItems() == null) {
+                view.hideLoading();
+                view.showError(R.string.failed_to_load_rss_empty_beans);
+            } else {
+                new ConvertAndDisplayTask(feed).execute();
+            }
+        }
+    }
+
+    private void onFailedToReceiveRssFeed(Throwable description) {
+        if (view != null) {
+            view.hideLoading();
+            final int errMsgResId;
+            if (description instanceof HttpException) {
+                errMsgResId = R.string.failed_to_load_rss_network_error;
+            } else if (description instanceof ParseException) {
+                errMsgResId = R.string.failed_to_load_rss_parsing_error;
+            } else {
+                errMsgResId = R.string.failed_to_load_rss_unknown_error;
+            }
+            view.showError(errMsgResId);
+        }
+    }
+
+    @Override
+    public void refresh() {
+        view.showLoading();
+        BiVariantCallback<RssFeed> callback = new BiVariantCallback<RssFeed>() {
+            @Override
+            public void onSuccess(RssFeed result) {
+                onRssFeedReceived(result);
+            }
+
+            @Override
+            public void onError(Throwable description) {
+                onFailedToReceiveRssFeed(description);
+            }
+        };
+        callback = new ConcurrentUtils.UIThreadCallback<>(callback);
+        new RefreshUseCase(rssRepository, imageRepository).execute(callback);
     }
 
     /**
@@ -91,7 +120,7 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
     private class ConvertAndDisplayTask extends AsyncTask<Void, Void, List<RssItemForUI>> {
 
         private final RssFeed feed;
-        private final RssToUIModelMapper mapper = new RssToUIModelMapper(ImageRepositoryImpl.getInstance());
+        private final RssToUIModelMapper mapper = new RssToUIModelMapper(imageRepository);
 
         private ConvertAndDisplayTask(@NonNull RssFeed feed) {
             this.feed = feed;

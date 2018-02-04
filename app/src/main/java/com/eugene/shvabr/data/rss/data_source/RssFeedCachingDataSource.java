@@ -12,10 +12,11 @@ import com.eugene.shvabr.domain.model.RssFeed;
 public class RssFeedCachingDataSource implements RssFeedDataSource {
 
     private final RssFeedDataSource delegate;
-    private final RssFeedCache cache = new RssFeedInMemoryCache();
+    private final RssFeedCache cache;
 
-    public RssFeedCachingDataSource(RssFeedDataSource delegate) {
+    public RssFeedCachingDataSource(RssFeedDataSource delegate, RssFeedCache cache) {
         this.delegate = delegate;
+        this.cache = cache;
     }
 
     @Override
@@ -37,5 +38,11 @@ public class RssFeedCachingDataSource implements RssFeedDataSource {
         } else {
             callback.onSuccess(cached);
         }
+    }
+
+    @Override
+    public void reset() {
+        // сброс кэша происходит на уровне репозитория
+        delegate.reset();
     }
 }

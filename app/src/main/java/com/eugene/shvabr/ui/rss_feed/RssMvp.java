@@ -17,5 +17,6 @@ public interface RssMvp {
     }
 
     interface Presenter extends MvpPresenter<View> {
+        void refresh();
     }
 }

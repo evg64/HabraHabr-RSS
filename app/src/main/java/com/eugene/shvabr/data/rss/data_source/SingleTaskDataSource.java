@@ -10,11 +10,11 @@ import java.util.Set;
  * Вместо создания 2го (дублирующего) запроса уведомит клиента по окончании 1го.
  */
 public class SingleTaskDataSource implements RssFeedDataSource {
-    private final RssFeedDataSource wrapped;
+    private final RssFeedDataSource delegate;
     private OneToManyCallback oneToMany;
 
-    public SingleTaskDataSource(RssFeedDataSource wrapped) {
-        this.wrapped = wrapped;
+    public SingleTaskDataSource(RssFeedDataSource delegate) {
+        this.delegate = delegate;
     }
 
     @Override
@@ -24,12 +24,17 @@ public class SingleTaskDataSource implements RssFeedDataSource {
         } else {
             oneToMany = new OneToManyCallback();
             oneToMany.addListener(callback);
-            wrapped.getFeed(oneToMany);
+            delegate.getFeed(oneToMany);
         }
     }
 
     private boolean isLoading() {
         return oneToMany != null;
+    }
+
+    @Override
+    public void reset() {
+        delegate.reset();
     }
 
     private class OneToManyCallback implements BiVariantCallback<RssFeed> {
