@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Shvabr</string>
+    <string name="error">Ошибка</string>
+    <string name="failed_to_load_rss_network_error">Не удалось загрузить rss (сетевая ошибка)</string>
+    <string name="failed_to_load_rss_parsing_error">Не удалось разобрать загруженный rss</string>
+    <string name="failed_to_load_rss_unknown_error">Не удалось загрузить rss (неизвестная ошибка)</string>
+    <string name="failed_to_load_rss_empty_beans">Не удалось оторазить rss (пришел пустой ответ)</string>
 </resources>
