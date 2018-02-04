@@ -81,7 +81,7 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
         };
         view.showLoading();
         getFeedUseCase = new GetFeedUseCase(repository);
-        getFeedUseCase.execute(new UIThreadCallback(callback));
+        getFeedUseCase.execute(new ConcurrentUtils.UIThreadCallback<>(callback));
     }
 
     /**
@@ -113,37 +113,6 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
                     view.displayRss(converted);
                 }
             }
-        }
-    }
-
-    /**
-     * Прокидывает все вызовы в главный поток
-     */
-    private static class UIThreadCallback implements BiVariantCallback<RssFeed> {
-        private final BiVariantCallback<RssFeed> wrapped;
-
-        private UIThreadCallback(BiVariantCallback<RssFeed> wrapped) {
-            this.wrapped = wrapped;
-        }
-
-        @Override
-        public void onSuccess(final RssFeed result) {
-            ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
-                @Override
-                public void run() {
-                    wrapped.onSuccess(result);
-                }
-            });
-        }
-
-        @Override
-        public void onError(final Throwable description) {
-            ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
-                @Override
-                public void run() {
-                    wrapped.onError(description);
-                }
-            });
         }
     }
 }

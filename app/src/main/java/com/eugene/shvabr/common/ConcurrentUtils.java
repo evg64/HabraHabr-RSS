@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
 
+import com.eugene.shvabr.domain.common.BiVariantCallback;
+
 /**
  * Created by Eugene on 04.02.2018.
  */
@@ -29,6 +31,37 @@ public class ConcurrentUtils {
             runnable.run();
         } else {
             runOnUIThread(runnable);
+        }
+    }
+
+    /**
+     * Прокидывает все вызовы в главный поток
+     */
+    public static class UIThreadCallback<T> implements BiVariantCallback<T> {
+        private final BiVariantCallback<T> wrapped;
+
+        public UIThreadCallback(BiVariantCallback<T> wrapped) {
+            this.wrapped = wrapped;
+        }
+
+        @Override
+        public void onSuccess(final T result) {
+            ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
+                @Override
+                public void run() {
+                    wrapped.onSuccess(result);
+                }
+            });
+        }
+
+        @Override
+        public void onError(final Throwable description) {
+            ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
+                @Override
+                public void run() {
+                    wrapped.onError(description);
+                }
+            });
         }
     }
 }
