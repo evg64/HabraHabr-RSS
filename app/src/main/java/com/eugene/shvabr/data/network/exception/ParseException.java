@@ -1,4 +1,4 @@
-package com.eugene.shvabr.data.api.exception;
+package com.eugene.shvabr.data.network.exception;
 
 import com.eugene.shvabr.domain.exception.ShvabrException;
 

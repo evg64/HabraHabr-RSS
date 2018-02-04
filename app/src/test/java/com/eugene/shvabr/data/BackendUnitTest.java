@@ -1,9 +1,8 @@
-package com.eugene.shvabr;
+package com.eugene.shvabr.data;
 
-import com.eugene.shvabr.data.api.HabraHabrRss;
-import com.eugene.shvabr.data.api.Backend;
+import com.eugene.shvabr.data.network.HabraHabrRss;
+import com.eugene.shvabr.data.network.Backend;
 import com.eugene.shvabr.domain.model.RssFeed;
-import com.eugene.shvabr.domain.repository.RssFeedListener;
 
 import org.junit.Assert;
 import org.junit.Test;

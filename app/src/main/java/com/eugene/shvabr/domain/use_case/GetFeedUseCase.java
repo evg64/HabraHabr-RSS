@@ -1,13 +1,14 @@
 package com.eugene.shvabr.domain.use_case;
 
-import com.eugene.shvabr.domain.repository.RssFeedListener;
+import com.eugene.shvabr.domain.common.BiVariantCallback;
+import com.eugene.shvabr.domain.model.RssFeed;
 import com.eugene.shvabr.domain.repository.RssRepository;
 
 /**
  * Created by Eugene on 03.02.2018.
  */
 
-public class GetFeedUseCase implements UseCase<RssFeedListener> {
+public class GetFeedUseCase extends BiVariantUseCase<RssFeed> {
 
     private final RssRepository repository;
 
@@ -20,7 +21,7 @@ public class GetFeedUseCase implements UseCase<RssFeedListener> {
     }
 
     @Override
-    public void execute(RssFeedListener callback) {
-
+    protected void executeInternal(final BiVariantCallback<RssFeed> callback) {
+        repository.getFeed(callback);
     }
 }

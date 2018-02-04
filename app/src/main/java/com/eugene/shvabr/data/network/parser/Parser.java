@@ -1,4 +1,4 @@
-package com.eugene.shvabr.data.api.parser;
+package com.eugene.shvabr.data.network.parser;
 
 import java.io.InputStream;
 

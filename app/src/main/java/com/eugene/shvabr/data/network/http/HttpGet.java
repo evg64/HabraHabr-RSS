@@ -1,4 +1,4 @@
-package com.eugene.shvabr.data.api.http;
+package com.eugene.shvabr.data.network.http;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -8,6 +8,8 @@ public interface UseCase<T extends UseCase.Callback> {
 
     void execute(T callback);
 
+    void unsubscribe();
+
     /**
      * Marker-interface
      */

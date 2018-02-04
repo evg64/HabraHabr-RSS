@@ -5,6 +5,9 @@ package com.eugene.shvabr.data.data_source;
  */
 public class DataSourceFactory {
     public static RssFeedDataSource createDefaultDataSource() {
-        return new RssFeedDataSourceCachingWrapper(new RssFeedWebApiDataSource());
+        RssFeedDataSource onions = new RssFeedNetworkDataSource();
+        onions = new RssFeedCachingDataSource(onions);
+        onions = new SingleTaskDataSource(onions);
+        return onions;
     }
 }

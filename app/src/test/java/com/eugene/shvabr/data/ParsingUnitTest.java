@@ -1,4 +1,4 @@
-package com.eugene.shvabr;
+package com.eugene.shvabr.data;
 
 import com.eugene.shvabr.data.model.Guid;
 import com.eugene.shvabr.data.model.RssFeedData;
