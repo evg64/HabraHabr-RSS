@@ -10,7 +10,7 @@ import com.eugene.shvabr.domain.common.BiVariantCallback;
  * Работает с коллбэком {@link BiVariantCallback}
  */
 public abstract class BiVariantUseCase<ResultType>
-        implements UseCase<BiVariantCallback<ResultType>> {
+        implements AsyncUseCase<BiVariantCallback<ResultType>> {
 
     @Override
     public final void execute(BiVariantCallback<ResultType> callback) {

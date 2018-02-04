@@ -1,8 +1,8 @@
 package com.eugene.shvabr.data;
 
-import com.eugene.shvabr.data.model.Guid;
-import com.eugene.shvabr.data.model.RssFeedData;
-import com.eugene.shvabr.data.model.RssItemData;
+import com.eugene.shvabr.data.rss.model.Guid;
+import com.eugene.shvabr.data.rss.model.RssFeedData;
+import com.eugene.shvabr.data.rss.model.RssItemData;
 
 import org.junit.Test;
 import org.simpleframework.xml.Serializer;
