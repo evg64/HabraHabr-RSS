@@ -1,9 +1,8 @@
 package com.eugene.shvabr.ui.rss_feed;
 
-import com.eugene.shvabr.domain.model.RssFeed;
-import com.eugene.shvabr.domain.model.RssItem;
 import com.eugene.shvabr.ui.common.mvp.MvpPresenter;
 import com.eugene.shvabr.ui.common.mvp.MvpView;
+import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
 
 public interface RssMvp {
     interface View extends MvpView {
-        void displayRss(List<RssItem> items);
+        void displayRss(List<RssItemForUI> items);
         boolean hasFeed();
     }
 

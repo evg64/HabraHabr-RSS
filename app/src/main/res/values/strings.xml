@@ -5,4 +5,7 @@
     <string name="failed_to_load_rss_parsing_error">Не удалось разобрать загруженный rss</string>
     <string name="failed_to_load_rss_unknown_error">Не удалось загрузить rss (неизвестная ошибка)</string>
     <string name="failed_to_load_rss_empty_beans">Не удалось оторазить rss (пришел пустой ответ)</string>
+    <string name="published_format">Опубликовал: %s</string>
+    <string name="failed_to_display_rss_feed">Не удалось отобразить rss-фид</string>
+    <string name="categories_format">Категории: %s</string>
 </resources>

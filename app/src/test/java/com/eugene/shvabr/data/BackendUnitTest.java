@@ -2,6 +2,7 @@ package com.eugene.shvabr.data;
 
 import com.eugene.shvabr.data.network.HabraHabrRss;
 import com.eugene.shvabr.data.network.Backend;
+import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
 
 import org.junit.Assert;
@@ -15,7 +16,7 @@ public class BackendUnitTest {
     @Test
     public void testRssIsLoadedWell() throws Exception {
         Backend backend = new HabraHabrRss();
-        backend.loadFeed(new RssFeedListener() {
+        backend.loadFeed(new BiVariantCallback<RssFeed>() {
             @Override
             public void onSuccess(RssFeed feed) {
                 System.out.println("Received: " + feed);

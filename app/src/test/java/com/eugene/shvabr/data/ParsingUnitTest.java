@@ -3,17 +3,12 @@ package com.eugene.shvabr.data;
 import com.eugene.shvabr.data.model.Guid;
 import com.eugene.shvabr.data.model.RssFeedData;
 import com.eugene.shvabr.data.model.RssItemData;
-import com.eugene.shvabr.domain.model.RssItem;
 
 import org.junit.Test;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

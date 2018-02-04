@@ -1,6 +1,7 @@
 package com.eugene.shvabr.domain.model;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class RssItem {
 
     private final String title;
 
-    private final String publishDate;
+    private final Date publishDate;
 
     private final List<String> categories;
 
@@ -21,7 +22,7 @@ public class RssItem {
 
     private final String creator;
 
-    public RssItem(String title, String publishDate, List<String> categories, String description, String link, String creator) {
+    public RssItem(String title, Date publishDate, List<String> categories, String description, String link, String creator) {
         this.title = title;
         this.publishDate = publishDate;
         this.categories = categories == null ? null : Collections.unmodifiableList(categories);
@@ -34,7 +35,7 @@ public class RssItem {
         return title;
     }
 
-    public String getPublishDate() {
+    public Date getPublishDate() {
         return publishDate;
     }
 

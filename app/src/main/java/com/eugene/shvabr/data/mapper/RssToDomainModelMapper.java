@@ -1,6 +1,5 @@
 package com.eugene.shvabr.data.mapper;
 
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.eugene.shvabr.data.model.Channel;
@@ -9,15 +8,18 @@ import com.eugene.shvabr.data.model.RssItemData;
 import com.eugene.shvabr.domain.model.RssFeed;
 import com.eugene.shvabr.domain.model.RssItem;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Eugene on 03.02.2018.
  */
 
-public class ToDomainModelMapper {
+public class RssToDomainModelMapper {
 
     @Nullable
     public RssFeed convert(@Nullable RssFeedData what) {
@@ -42,20 +44,31 @@ public class ToDomainModelMapper {
         }
         List<RssItem> result = new ArrayList<>();
         for (RssItemData item : items) {
-            result.add(convert(item));
+            RssItem converted = convert(item);
+            if (converted != null) {
+                result.add(converted);
+            }
         }
         return result;
     }
 
-    @NonNull
+    private final SimpleDateFormat dateFormat =
+            new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.UK);
+
+    @Nullable
     private RssItem convert(RssItemData what) {
-        return new RssItem(
-                what.getTitle(),
-                what.getPubDate(),
-                what.getCategory(),
-                what.getDescription(),
-                what.getLink(),
-                what.getCreator()
-        );
+        try {
+            return new RssItem(
+                    what.getTitle(),
+                    dateFormat.parse(what.getPubDate()),
+                    what.getCategory(),
+                    what.getDescription(),
+                    what.getLink(),
+                    what.getCreator()
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

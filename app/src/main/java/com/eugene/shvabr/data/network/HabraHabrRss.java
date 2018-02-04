@@ -5,7 +5,7 @@ import com.eugene.shvabr.data.network.exception.HttpException;
 import com.eugene.shvabr.data.network.exception.ParseException;
 import com.eugene.shvabr.data.network.http.HttpGet;
 import com.eugene.shvabr.data.network.parser.RssFeedParser;
-import com.eugene.shvabr.data.mapper.ToDomainModelMapper;
+import com.eugene.shvabr.data.mapper.RssToDomainModelMapper;
 import com.eugene.shvabr.data.model.RssFeedData;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
@@ -20,7 +20,7 @@ import java.io.InputStream;
 public class HabraHabrRss implements Backend {
 
     private RssFeedParser parser = new RssFeedParser();
-    private ToDomainModelMapper mapper = new ToDomainModelMapper();
+    private RssToDomainModelMapper mapper = new RssToDomainModelMapper();
 
     @Override
     public void loadFeed(BiVariantCallback<RssFeed> callback) {
