@@ -33,7 +33,8 @@ public class SingleTaskDataSource implements RssFeedDataSource {
     }
 
     @Override
-    public void reset() {
+    public synchronized void reset() {
+        oneToMany = null;
         delegate.reset();
     }
 
