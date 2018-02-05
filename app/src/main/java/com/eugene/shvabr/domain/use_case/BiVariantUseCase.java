@@ -40,7 +40,6 @@ public abstract class BiVariantUseCase<ResultType>
      * Поскольку клиент должен получить не более 1 обратного вызова,
      * надо вручную отписываться от уведомлений клиента перед каждым вызовом коллбэка,
      * т.к. без rx мы не можем гарантировать, что onError не вызовется дважды
-     * и даже то, что при вызове onSuccess не вылетит Exception, и управление не приедет в onError
      */
     private class UnsubscribingCallback implements BiVariantCallback<ResultType> {
 
@@ -54,7 +53,8 @@ public abstract class BiVariantUseCase<ResultType>
         public void onSuccess(ResultType result) {
             synchronized (BiVariantUseCase.this) {
                 if (!cancelledSubscription) {
-                    unsubscribe();
+                    // onSuccess не должен исключать возможность последующего вызова onError
+                    // unsubscribe();
                     delegate.onSuccess(result);
                 } else {
                     logDuplicateCall(null);
