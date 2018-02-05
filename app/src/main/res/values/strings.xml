@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shvabr</string>
+    <string name="app_name">Habrahabr rss</string>
     <string name="error">Ошибка</string>
     <string name="failed_to_load_rss_network_error">Не удалось загрузить rss (сетевая ошибка)</string>
     <string name="failed_to_load_rss_parsing_error">Не удалось разобрать загруженный rss</string>
