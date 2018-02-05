@@ -44,10 +44,10 @@ public abstract class BiVariantUseCase<ResultType>
      */
     private class UnsubscribingCallback implements BiVariantCallback<ResultType> {
 
-        private final BiVariantCallback<ResultType> wrapped;
+        private final BiVariantCallback<ResultType> delegate;
 
-        private UnsubscribingCallback(BiVariantCallback<ResultType> wrapped) {
-            this.wrapped = wrapped;
+        private UnsubscribingCallback(BiVariantCallback<ResultType> delegate) {
+            this.delegate = delegate;
         }
 
         @Override
@@ -55,7 +55,7 @@ public abstract class BiVariantUseCase<ResultType>
             synchronized (BiVariantUseCase.this) {
                 if (!cancelledSubscription) {
                     unsubscribe();
-                    wrapped.onSuccess(result);
+                    delegate.onSuccess(result);
                 } else {
                     logDuplicateCall(null);
                 }
@@ -67,7 +67,7 @@ public abstract class BiVariantUseCase<ResultType>
             synchronized (BiVariantUseCase.this) {
                 if (!cancelledSubscription) {
                     unsubscribe();
-                    wrapped.onError(description);
+                    delegate.onError(description);
                 } else {
                     logDuplicateCall(description);
                 }

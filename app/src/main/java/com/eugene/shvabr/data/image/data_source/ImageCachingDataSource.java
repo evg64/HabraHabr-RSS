@@ -12,10 +12,10 @@ import com.eugene.shvabr.data.image.cache.ImageCache;
 
 public class ImageCachingDataSource implements ImageDataSource {
     private ImageCache cache;
-    private final ImageDataSource wrapped;
+    private final ImageDataSource delegate;
 
-    public ImageCachingDataSource(ImageDataSource wrapped, ImageCache cache) {
-        this.wrapped = wrapped;
+    public ImageCachingDataSource(ImageDataSource delegate, ImageCache cache) {
+        this.delegate = delegate;
         this.cache = cache;
     }
 
@@ -23,7 +23,7 @@ public class ImageCachingDataSource implements ImageDataSource {
     public Bitmap getImage(String address) throws HttpException, ParseException {
         Bitmap result = cache.get(address);
         if (result == null) {
-            result = wrapped.getImage(address);
+            result = delegate.getImage(address);
             cache.put(address, result);
         }
         return result;

@@ -38,10 +38,10 @@ public class ConcurrentUtils {
      * Прокидывает все вызовы в главный поток
      */
     public static class UIThreadCallback<T> implements BiVariantCallback<T> {
-        private final BiVariantCallback<T> wrapped;
+        private final BiVariantCallback<T> delegate;
 
-        public UIThreadCallback(BiVariantCallback<T> wrapped) {
-            this.wrapped = wrapped;
+        public UIThreadCallback(BiVariantCallback<T> delegate) {
+            this.delegate = delegate;
         }
 
         @Override
@@ -49,7 +49,7 @@ public class ConcurrentUtils {
             ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
                 @Override
                 public void run() {
-                    wrapped.onSuccess(result);
+                    delegate.onSuccess(result);
                 }
             });
         }
@@ -59,7 +59,7 @@ public class ConcurrentUtils {
             ConcurrentUtils.ensureRunOnUIThread(new Runnable() {
                 @Override
                 public void run() {
-                    wrapped.onError(description);
+                    delegate.onError(description);
                 }
             });
         }
