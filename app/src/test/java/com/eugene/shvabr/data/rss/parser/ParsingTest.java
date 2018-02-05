@@ -1,4 +1,4 @@
-package com.eugene.shvabr.data;
+package com.eugene.shvabr.data.rss.parser;
 
 import com.eugene.shvabr.data.rss.model.Guid;
 import com.eugene.shvabr.data.rss.model.RssFeedData;
@@ -15,7 +15,7 @@ import java.io.InputStream;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ParsingUnitTest {
+public class ParsingTest {
 
     private final Serializer serializer = new Persister();
 

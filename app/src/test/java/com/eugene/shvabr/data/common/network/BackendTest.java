@@ -1,7 +1,5 @@
-package com.eugene.shvabr.data;
+package com.eugene.shvabr.data.common.network;
 
-import com.eugene.shvabr.data.common.network.HabraHabrApi;
-import com.eugene.shvabr.data.common.network.Backend;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
 
@@ -12,7 +10,7 @@ import org.junit.Test;
  * Created by Eugene on 03.02.2018.
  */
 
-public class BackendUnitTest {
+public class BackendTest {
     @Test
     public void testRssIsLoadedWell() throws Exception {
         Backend backend = new HabraHabrApi();
