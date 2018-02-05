@@ -11,6 +11,7 @@ import com.eugene.shvabr.data.image.repository.ImageRepositoryImpl;
 import com.eugene.shvabr.data.rss.repository.RssRepositoryImpl;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
+import com.eugene.shvabr.domain.model.RssItem;
 import com.eugene.shvabr.domain.repository.ImageRepository;
 import com.eugene.shvabr.domain.repository.RssRepository;
 import com.eugene.shvabr.domain.use_case.GetFeedUseCase;
@@ -19,6 +20,7 @@ import com.eugene.shvabr.ui.common.mvp.BasePresenter;
 import com.eugene.shvabr.ui.rss_feed.RssMvp;
 import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +31,7 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
     private final RssRepository rssRepository = RssRepositoryImpl.getInstance();
     private final ImageRepository imageRepository = ImageRepositoryImpl.getInstance();
     private GetFeedUseCase getFeedUseCase;
+    private ConvertAndDisplayTask convertAndDisplayTask;
 
     @Override
     public void attach(RssMvp.View view) {
@@ -75,7 +78,8 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
                 view.hideLoading();
                 view.showError(R.string.failed_to_load_rss_empty_beans);
             } else {
-                new ConvertAndDisplayTask(feed).execute();
+                convertAndDisplayTask = new ConvertAndDisplayTask(feed);
+                convertAndDisplayTask.execute();
             }
         }
     }
@@ -98,6 +102,9 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
     @Override
     public void refresh() {
         view.showLoading();
+        if(convertAndDisplayTask != null) {
+            convertAndDisplayTask.cancel(true);
+        }
         BiVariantCallback<RssFeed> callback = new BiVariantCallback<RssFeed>() {
             @Override
             public void onSuccess(RssFeed result) {
@@ -117,7 +124,7 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
      * Приводит ответ от апи к виду, пригодному для представления.<br>
      * Делать это надо в бэкграунде, т.к. по ходу мы будем загружать картинки.
      */
-    private class ConvertAndDisplayTask extends AsyncTask<Void, Void, List<RssItemForUI>> {
+    private class ConvertAndDisplayTask extends AsyncTask<Void, RssItemForUI, List<RssItemForUI>> {
 
         private final RssFeed feed;
         private final RssToUIModelMapper mapper = new RssToUIModelMapper(imageRepository);
@@ -127,19 +134,55 @@ public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.P
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            view.resetItems();
+        }
+
+        @Override
         protected List<RssItemForUI> doInBackground(Void... voids) {
-            return mapper.convert(feed.getItems());
+            if (feed.getItems() == null) {
+                return null;
+            }
+            List<RssItemForUI> result = new ArrayList<>();
+            for (RssItem item : feed.getItems()) {
+                if (isCancelled()) {
+                    break;
+                }
+                RssItemForUI converted = mapper.convert(item);
+                if (converted != null) {
+                    result.add(converted);
+                    publishProgress(converted);
+                }
+            }
+            return result;
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+            convertAndDisplayTask = null;
+        }
+
+        @Override
+        protected void onProgressUpdate(RssItemForUI... values) {
+            super.onProgressUpdate(values);
+            if (view != null && !isCancelled()) {
+                view.hideLoading();
+                view.addRssItem(values[0]);
+            }
         }
 
         @Override
         protected void onPostExecute(List<RssItemForUI> converted) {
             super.onPostExecute(converted);
+            convertAndDisplayTask = null;
             if (view != null) {
                 view.hideLoading();
                 if (converted == null) {
                     view.showError(R.string.failed_to_display_rss_feed);
                 } else {
-                    view.displayRss(converted);
+                    view.notifyAllItemsLoaded();
                 }
             }
         }

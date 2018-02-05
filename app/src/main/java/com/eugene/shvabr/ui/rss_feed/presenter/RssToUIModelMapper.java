@@ -46,7 +46,7 @@ public class RssToUIModelMapper {
     private SimpleDateFormat publishDateFormatter = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
 
     @Nullable
-    private RssItemForUI convert(RssItem what) {
+    public RssItemForUI convert(RssItem what) {
         if (what == null) {
             return null;
         }

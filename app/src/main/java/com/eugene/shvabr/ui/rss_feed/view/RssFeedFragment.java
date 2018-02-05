@@ -16,10 +16,8 @@ import com.eugene.shvabr.R;
 import com.eugene.shvabr.ui.common.ErrorDialogFragment;
 import com.eugene.shvabr.ui.common.mvp.BaseMvpFragment;
 import com.eugene.shvabr.ui.rss_feed.RssMvp;
-import com.eugene.shvabr.ui.rss_feed.presenter.RssPresenter;
 import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
-
-import java.util.List;
+import com.eugene.shvabr.ui.rss_feed.presenter.RssPresenter;
 
 /**
  * Фрагмент с rss-списком
@@ -100,13 +98,23 @@ public class RssFeedFragment extends BaseMvpFragment implements RssMvp.View, Err
     }
 
     @Override
-    public void displayRss(List<RssItemForUI> items) {
-        adapter.setItems(items);
+    public boolean hasFeed() {
+        return adapter.hasFeed();
     }
 
     @Override
-    public boolean hasFeed() {
-        return adapter.hasFeed();
+    public void addRssItem(RssItemForUI item) {
+        adapter.addItem(item);
+    }
+
+    @Override
+    public void resetItems() {
+        adapter.resetItems();
+    }
+
+    @Override
+    public void notifyAllItemsLoaded() {
+        adapter.setAllItemsLoaded(true);
     }
 
     @Override

@@ -12,17 +12,26 @@ import com.eugene.shvabr.R;
 import com.eugene.shvabr.databinding.RssItemBinding;
 import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * RecyclerView адаптер для rss-списка
  */
-public class RssAdapter extends RecyclerView.Adapter<RssAdapter.RssItemHolder> {
+public class RssAdapter extends RecyclerView.Adapter<RssAdapter.Holder> {
 
     private List<RssItemForUI> items;
+    /**
+     * если false и {@link #items} != null, показывает крутилку в конце списка (чтобы при поэлементной загрузке понимать, догружаем мы еще что-то или нет)
+     */
+    private boolean allItemsLoaded;
 
-    public void setItems(List<RssItemForUI> items) {
-        this.items = items;
+    private static final int ITEM_VIEW_TYPE_RSS = 0;
+    private static final int ITEM_VIEW_TYPE_PROGRESS = 1;
+
+    public void resetItems() {
+        allItemsLoaded = false;
+        this.items = null;
         notifyDataSetChanged();
     }
 
@@ -31,32 +40,80 @@ public class RssAdapter extends RecyclerView.Adapter<RssAdapter.RssItemHolder> {
     }
 
     @Override
-    public RssItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.rss_item, parent, false);
-        TextView title = view.findViewById(R.id.title);
-        TextView description = view.findViewById(R.id.description);
-        title.setMovementMethod(LinkMovementMethod.getInstance());
-        description.setMovementMethod(LinkMovementMethod.getInstance());
-        return new RssItemHolder(view);
+        switch (viewType) {
+            case ITEM_VIEW_TYPE_RSS: {
+                View view = inflater.inflate(R.layout.rss_item, parent, false);
+                TextView title = view.findViewById(R.id.title);
+                TextView description = view.findViewById(R.id.description);
+                title.setMovementMethod(LinkMovementMethod.getInstance());
+                description.setMovementMethod(LinkMovementMethod.getInstance());
+                return new RssItemHolder(view);
+            }
+            case ITEM_VIEW_TYPE_PROGRESS: {
+                View view = inflater.inflate(R.layout.loading_item, parent, false);
+                return new LoadingHolder(view);
+            }
+            default:
+                return null;
+        }
     }
 
     @Override
-    public void onBindViewHolder(RssItemHolder holder, int position) {
-        RssItemForUI item = items.get(position);
-        holder.binding.setRss(item);
+    public void onBindViewHolder(Holder holder, int position) {
+        if (holder instanceof RssItemHolder) {
+            RssItemForUI item = items.get(position);
+            ((RssItemHolder) holder).binding.setRss(item);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return items == null ? 0 : items.size();
+        return items == null ? 0 : items.size() + (allItemsLoaded ? 0 : 1);
     }
 
-    static class RssItemHolder extends RecyclerView.ViewHolder {
+    @Override
+    public int getItemViewType(int position) {
+        if (allItemsLoaded) {
+            return ITEM_VIEW_TYPE_RSS;
+        } else {
+            return position == getItemCount() - 1 ? ITEM_VIEW_TYPE_PROGRESS : ITEM_VIEW_TYPE_RSS;
+        }
+    }
+
+    public void addItem(RssItemForUI item) {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
+        items.add(item);
+        notifyDataSetChanged();
+    }
+
+    public void setAllItemsLoaded(boolean allItemsLoaded) {
+        this.allItemsLoaded = allItemsLoaded;
+        notifyDataSetChanged();
+    }
+
+    static class Holder extends RecyclerView.ViewHolder {
+
+        Holder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    static class RssItemHolder extends Holder {
 
         private RssItemBinding binding = DataBindingUtil.bind(itemView);
 
-        public RssItemHolder(View itemView) {
+        RssItemHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    static class LoadingHolder extends Holder {
+
+        LoadingHolder(View itemView) {
             super(itemView);
         }
     }
