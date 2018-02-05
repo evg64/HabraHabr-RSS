@@ -80,7 +80,7 @@ public class RssToUIModelMapper {
     private Spanned toHtml(String htmlString) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             int flags = 0;
-            return Html.fromHtml(htmlString, flags);
+            return Html.fromHtml(htmlString, flags, new RssImageGetter(repository), null);
         } else {
             return Html.fromHtml(htmlString, new RssImageGetter(repository), null);
         }
