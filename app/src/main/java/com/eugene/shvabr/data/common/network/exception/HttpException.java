@@ -5,7 +5,7 @@ import com.eugene.shvabr.domain.exception.ShvabrException;
 import java.io.IOException;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Исключение при выполнении http-запроса.
  */
 public class HttpException extends ShvabrException {
     public HttpException(IOException cause) {

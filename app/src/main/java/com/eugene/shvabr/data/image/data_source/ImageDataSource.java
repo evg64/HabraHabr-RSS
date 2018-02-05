@@ -6,7 +6,7 @@ import com.eugene.shvabr.data.common.network.exception.HttpException;
 import com.eugene.shvabr.data.common.network.exception.ParseException;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Интерфейс доступа к картинкам.
  */
 public interface ImageDataSource {
     Bitmap getImage(String address) throws HttpException, ParseException;

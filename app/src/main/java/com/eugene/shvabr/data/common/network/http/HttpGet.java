@@ -4,9 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Исполняемый http get-запрос.
  */
-
 public class HttpGet extends HttpRequest {
     private final String url;
 

@@ -7,9 +7,8 @@ import com.eugene.shvabr.domain.common.Resettable;
 import com.eugene.shvabr.domain.model.RssFeed;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Кэш для rss-фида.
  */
-
 public interface RssFeedCache extends Resettable {
     @Nullable
     RssFeed get();

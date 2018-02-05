@@ -7,7 +7,7 @@ import com.eugene.shvabr.data.common.network.exception.ParseException;
 import com.eugene.shvabr.domain.common.Resettable;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Репозиторий картинок.
  */
 public interface ImageRepository extends Resettable {
     /**

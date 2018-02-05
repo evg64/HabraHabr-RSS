@@ -8,9 +8,8 @@ import com.eugene.shvabr.data.common.network.parser.Parser;
 import java.io.InputStream;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Парсер картинок.
  */
-
 public class ImageDecoder implements Parser<Bitmap> {
 
     @Override

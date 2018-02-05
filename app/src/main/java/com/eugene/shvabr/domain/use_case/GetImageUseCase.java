@@ -9,7 +9,7 @@ import com.eugene.shvabr.domain.Config;
 import com.eugene.shvabr.domain.repository.ImageRepository;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Интерактор для получения картинки.
  */
 public class GetImageUseCase implements UseCase {
     private final ImageRepository repository;

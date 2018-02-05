@@ -15,9 +15,8 @@ import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 import java.util.List;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * RecyclerView адаптер для rss-списка
  */
-
 public class RssAdapter extends RecyclerView.Adapter<RssAdapter.RssItemHolder> {
 
     private List<RssItemForUI> items;

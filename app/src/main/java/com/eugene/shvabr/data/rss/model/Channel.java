@@ -5,7 +5,7 @@ import org.simpleframework.xml.ElementList;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Используется, чтобы отзеркалить структуру приходящего xml в модели данных.
  */
 public class Channel {
 

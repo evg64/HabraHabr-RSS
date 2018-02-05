@@ -6,9 +6,8 @@ import android.support.annotation.Nullable;
 import com.eugene.shvabr.domain.model.RssFeed;
 
 /**
- * Created by Eugene on 03.02.2018.
+ Реализация кэша rss, которая держит все в memory.
  */
-
 public class RssFeedInMemoryCache implements RssFeedCache {
     private RssFeed cachedValue;
 

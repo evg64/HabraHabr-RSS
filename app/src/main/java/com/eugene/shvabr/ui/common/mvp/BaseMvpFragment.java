@@ -8,7 +8,6 @@ import com.eugene.shvabr.ui.common.ErrorDialogFragment;
 /**
  * Created by Eugene on 03.02.2018.
  */
-
 public abstract class BaseMvpFragment extends Fragment implements MvpView {
 
     @Override

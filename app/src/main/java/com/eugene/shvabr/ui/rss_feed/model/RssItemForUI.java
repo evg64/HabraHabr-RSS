@@ -1,6 +1,5 @@
 package com.eugene.shvabr.ui.rss_feed.model;
 
-import android.graphics.drawable.Drawable;
 import android.text.Spanned;
 
 /**

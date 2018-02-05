@@ -3,7 +3,6 @@ package com.eugene.shvabr.data.rss.model;
 /**
  * UNUSED SO FAR
  */
-
 public class Image {
     private String title;
 

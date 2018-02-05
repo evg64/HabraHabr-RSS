@@ -9,9 +9,8 @@ import org.simpleframework.xml.core.Persister;
 import java.io.InputStream;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Парсер rss-фида.
  */
-
 public class RssFeedParser implements Parser<RssFeedData> {
     private final Serializer serializer = new Persister();
 

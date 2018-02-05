@@ -4,9 +4,8 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Text;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Используется, чтобы отзеркалить структуру приходящего xml в модели данных.
  */
-
 public class Guid {
     @Text
     private String content;

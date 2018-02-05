@@ -10,7 +10,7 @@ import com.eugene.shvabr.domain.repository.ImageRepository;
 import com.eugene.shvabr.domain.use_case.GetImageUseCase;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Отвечает за то, чтобы вернуть картинку в класс {@link Html} при конвертации html с описанием поста из строкового представления в {@link android.text.Spannable}.
  */
 class RssImageGetter implements Html.ImageGetter {
     private final ImageRepository repository;

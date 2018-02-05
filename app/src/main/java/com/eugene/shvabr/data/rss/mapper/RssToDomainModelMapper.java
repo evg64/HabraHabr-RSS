@@ -16,9 +16,8 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Конвертер rss-фида из модели слоя данных в доменную модель.
  */
-
 public class RssToDomainModelMapper {
 
     @Nullable

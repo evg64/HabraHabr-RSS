@@ -7,10 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Реализация кэша картинок, которая держит все в memory.
  */
 public class ImageInMemoryCache implements ImageCache {
-
+    // TODO: use soft references
     private final Map<String, Bitmap> cache = new HashMap<>();
 
     @Nullable

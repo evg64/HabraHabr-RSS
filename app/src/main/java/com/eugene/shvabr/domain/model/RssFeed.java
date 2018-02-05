@@ -6,9 +6,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Доменная модель rss-фида.
  */
-
 public class RssFeed {
     private final List<RssItem> items;
 

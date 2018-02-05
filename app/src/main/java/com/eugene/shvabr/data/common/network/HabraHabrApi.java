@@ -17,9 +17,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Реализация клиента для бэкэнда.
  */
-
 public class HabraHabrApi implements Backend {
 
     private RssFeedParser parser = new RssFeedParser();

@@ -6,9 +6,8 @@ import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Обертка, которая кэширует результат и впоследствии возвращает значение из кэша.
  */
-
 public class RssFeedCachingDataSource implements RssFeedDataSource {
 
     private final RssFeedDataSource delegate;

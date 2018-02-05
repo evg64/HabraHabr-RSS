@@ -7,7 +7,7 @@ import com.eugene.shvabr.BuildConfig;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 
 /**
- * Работает с коллбэком {@link BiVariantCallback}
+ * Асинхронный интерактор, работающий с коллбэком {@link BiVariantCallback}.
  */
 public abstract class BiVariantUseCase<ResultType>
         implements AsyncUseCase<BiVariantCallback<ResultType>> {

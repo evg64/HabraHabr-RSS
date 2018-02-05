@@ -5,9 +5,8 @@ import com.eugene.shvabr.domain.model.RssFeed;
 import com.eugene.shvabr.domain.repository.RssRepository;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Интерактор для получения rss-фида.
  */
-
 public class GetFeedUseCase extends BiVariantUseCase<RssFeed> {
 
     private final RssRepository repository;

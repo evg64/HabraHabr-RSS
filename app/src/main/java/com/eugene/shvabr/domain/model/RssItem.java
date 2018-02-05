@@ -5,9 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Доменная модель одного элемента из rss-фида.
  */
-
 public class RssItem {
 
     private final String title;

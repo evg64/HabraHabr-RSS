@@ -1,9 +1,8 @@
 package com.eugene.shvabr.ui.common;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Константы, используемые в качестве ключей-extra при запуске активити и фрагментов.
  */
-
 public class Extras {
     public static final String MESSAGE = "MESSAGE";
 }

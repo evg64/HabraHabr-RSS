@@ -7,9 +7,8 @@ import android.support.annotation.Nullable;
 import com.eugene.shvabr.domain.common.BiVariantCallback;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Helper-класс для работы с многопоточностью.
  */
-
 public class ConcurrentUtils {
     public static boolean isUIThread() {
         return Looper.myLooper() == Looper.getMainLooper();

@@ -7,7 +7,7 @@ import org.simpleframework.xml.Namespace;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Data-модель для одного элемента rss-фида.
  */
 public class RssItemData {
     @Element

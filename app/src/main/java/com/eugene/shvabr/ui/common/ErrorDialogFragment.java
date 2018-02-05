@@ -11,9 +11,10 @@ import android.support.v7.app.AlertDialog;
 import com.eugene.shvabr.R;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Диалог, показывающий сообщение об ошибке.<br>
+ * Если был запущен из фрагмента, реализующего {@link Retryable}, вызовет на этом
+ * фрагменте {@link Retryable#retry()} при нажатии на кнопку "Перезагрузить".
  */
-
 public class ErrorDialogFragment extends DialogFragment {
     public static ErrorDialogFragment create(String message) {
         ErrorDialogFragment result = new ErrorDialogFragment();

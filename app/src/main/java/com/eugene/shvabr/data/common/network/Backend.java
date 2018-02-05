@@ -8,9 +8,8 @@ import com.eugene.shvabr.domain.common.BiVariantCallback;
 import com.eugene.shvabr.domain.model.RssFeed;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Интерфейс объявляет методы, которые предоставляет нам api бэка.
  */
-
 public interface Backend {
     void loadFeed(BiVariantCallback<RssFeed> callback);
 

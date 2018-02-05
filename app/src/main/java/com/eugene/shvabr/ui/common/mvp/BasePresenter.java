@@ -3,7 +3,6 @@ package com.eugene.shvabr.ui.common.mvp;
 /**
  * Created by Eugene on 03.02.2018.
  */
-
 public class BasePresenter<View extends MvpView> implements MvpPresenter<View> {
     protected View view;
 

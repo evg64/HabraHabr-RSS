@@ -6,7 +6,7 @@ import com.eugene.shvabr.domain.repository.ImageRepository;
 import com.eugene.shvabr.domain.repository.RssRepository;
 
 /**
- * Реализует функционал pull-to-refresh.
+ * Интерактор, реализующий функционал pull-to-refresh (сбросить кэш и загрузить).
  */
 public class RefreshUseCase extends BiVariantUseCase<RssFeed> {
     private final RssRepository rssRepository;

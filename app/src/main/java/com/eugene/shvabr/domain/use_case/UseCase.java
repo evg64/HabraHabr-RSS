@@ -1,8 +1,7 @@
 package com.eugene.shvabr.domain.use_case;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Marker-интерфейс для интерактора.
  */
-
 public interface UseCase {
 }

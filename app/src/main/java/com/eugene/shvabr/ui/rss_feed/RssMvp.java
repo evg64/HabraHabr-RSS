@@ -7,10 +7,10 @@ import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Mvp-контракт для rss-фида.
  */
-
 public interface RssMvp {
+
     interface View extends MvpView {
         void displayRss(List<RssItemForUI> items);
         boolean hasFeed();

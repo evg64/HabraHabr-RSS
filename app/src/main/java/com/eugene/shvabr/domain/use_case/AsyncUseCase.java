@@ -1,9 +1,8 @@
 package com.eugene.shvabr.domain.use_case;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Interactor, работающий асинхронно.
  */
-
 public interface AsyncUseCase<T extends AsyncUseCase.Callback> {
 
     void execute(T callback);

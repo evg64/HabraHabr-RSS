@@ -8,9 +8,8 @@ import com.eugene.shvabr.data.common.network.exception.HttpException;
 import com.eugene.shvabr.data.common.network.exception.ParseException;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * DataSource для картинок, который ходит в сеть.
  */
-
 public class ImageNetworkDataSource implements ImageDataSource {
     private final Backend backend = new HabraHabrApi();
 

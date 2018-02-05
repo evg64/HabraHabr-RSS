@@ -7,9 +7,8 @@ import com.eugene.shvabr.data.common.network.exception.ParseException;
 import com.eugene.shvabr.data.image.cache.ImageCache;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Обертка, которая кэширует результат и впоследствии возвращает значение из кэша.
  */
-
 public class ImageCachingDataSource implements ImageDataSource {
     private ImageCache cache;
     private final ImageDataSource delegate;

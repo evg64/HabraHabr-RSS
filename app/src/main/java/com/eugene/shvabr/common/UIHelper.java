@@ -3,7 +3,7 @@ package com.eugene.shvabr.common;
 import android.content.res.Resources;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Helper-класс для работы с ui.
  */
 public class UIHelper {
     static void initialize(Resources resources) {

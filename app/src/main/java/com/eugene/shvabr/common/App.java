@@ -5,7 +5,6 @@ import android.app.Application;
 /**
  * Created by Eugene on 04.02.2018.
  */
-
 public class App extends Application {
 
     @Override

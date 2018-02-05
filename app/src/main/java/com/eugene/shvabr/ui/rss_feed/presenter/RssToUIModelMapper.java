@@ -18,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Конвертирует доменную модель элементов rss списка в модель представления.
  */
-
 public class RssToUIModelMapper {
     private final Resources resources = UIHelper.getResources();
     private final ImageRepository repository;

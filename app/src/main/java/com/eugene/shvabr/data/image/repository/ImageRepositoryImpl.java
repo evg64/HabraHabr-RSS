@@ -12,9 +12,9 @@ import com.eugene.shvabr.data.image.data_source.ImageNetworkDataSource;
 import com.eugene.shvabr.domain.repository.ImageRepository;
 
 /**
- * Created by Eugene on 04.02.2018.
+ * Реализация репозитория для картинок. Сделан синглтоном, чтобы не затерались экземпляры кэша
+ * (в условиях отсутствия Dagger 2).
  */
-
 public class ImageRepositoryImpl implements ImageRepository {
 
     private static final class Singletone {

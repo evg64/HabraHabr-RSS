@@ -11,7 +11,8 @@ import com.eugene.shvabr.domain.model.RssFeed;
 import com.eugene.shvabr.domain.repository.RssRepository;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Реализация репозитория для rss-фида. Сделан синглтоном, чтобы не затерались экземпляры кэша
+ * (в условиях отсутствия Dagger 2).
  */
 public class RssRepositoryImpl implements RssRepository {
 

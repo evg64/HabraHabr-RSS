@@ -9,7 +9,7 @@ import java.net.URLConnection;
 import java.util.concurrent.Callable;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Исполняемый http-запрос.
  */
 abstract class HttpRequest implements Callable<InputStream> {
     URLConnection initializeConnection(final String url) throws IOException {

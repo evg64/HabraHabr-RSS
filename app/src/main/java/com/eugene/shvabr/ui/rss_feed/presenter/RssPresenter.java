@@ -22,7 +22,7 @@ import com.eugene.shvabr.ui.rss_feed.model.RssItemForUI;
 import java.util.List;
 
 /**
- * Created by Eugene on 03.02.2018.
+ * Presenter для rss фида.
  */
 public class RssPresenter extends BasePresenter<RssMvp.View> implements RssMvp.Presenter {
 
